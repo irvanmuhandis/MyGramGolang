@@ -5,13 +5,13 @@ import (
 	_ "finalassignment/docs"
 	"finalassignment/route"
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/asaskevich/govalidator"
 )
 
-// var PORT = os.Getenv("PGPORT")
-var PORT = "8080"
+var PORT = os.Getenv("PGPORT")
 
 // @title Final Assignment - M.Irvan Muhandis
 // @version 1.0
@@ -33,8 +33,6 @@ func main() {
 		}
 		return num > 8
 	})
-	fmt.Println("Swagger running on : http://localhost:8080/swagger/index.html")
-
 	database.StartDB()
 	fmt.Println("Server starting at :", PORT)
 

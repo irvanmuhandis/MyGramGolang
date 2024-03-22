@@ -4,25 +4,18 @@ import (
 	"finalassignment/models"
 	"fmt"
 	"log"
+	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-// var (
-// 	host     = os.Getenv("PGHOST")
-// 	port     = os.Getenv("PGPORT")
-// 	user     = os.Getenv("PGUSER")
-// 	password = os.Getenv("PGPASSWORD")
-// 	dbname   = os.Getenv("PGDATABASE")
-// )
-
-const (
-	host     = "localhost"
-	port     = "5432"
-	user     = "postgres"
-	password = "1234"
-	dbname   = "postgres"
+var (
+	host     = os.Getenv("PGHOST")
+	port     = os.Getenv("PGPORT")
+	user     = os.Getenv("PGUSER")
+	password = os.Getenv("PGPASSWORD")
+	dbname   = os.Getenv("PGDATABASE")
 )
 
 var (
