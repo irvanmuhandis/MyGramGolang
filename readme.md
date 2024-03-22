@@ -27,4 +27,5 @@ Adapun API ini memiliki requirement :
 - Database Postgres
 - Bycrpt Crypto
 - Jwt Go
+- Go Validator
 - Railway

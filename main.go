@@ -33,6 +33,7 @@ func main() {
 		}
 		return num > 8
 	})
+
 	database.StartDB()
 	fmt.Println("Server starting at :", PORT)
 
