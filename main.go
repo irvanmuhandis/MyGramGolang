@@ -17,7 +17,7 @@ var PORT = os.Getenv("PORT")
 // @version 1.0
 // @description Final Assignment Class 005
 // @license.name Golang Hacktiv8
-// @host localhost:8080
+// @host mygramgolang-production.up.railway.app:8080
 // @BasePath /
 //
 //	@securityDefinitions.apikey	ApiKeyAuth

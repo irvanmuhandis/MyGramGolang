@@ -35,7 +35,7 @@ func GetDB() *gorm.DB {
 // @contact.email soberkode.com
 // @license.name Apace 2.0
 // @license.url http://google.com/
-// @host localhost:8080
+// @host mygramgolang-production.up.railway.app:8080
 // @BasePath /
 func StartDB() {
 	psqInfo := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", host, user, password, dbname, port)
