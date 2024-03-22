@@ -14,7 +14,9 @@ Adapun API ini memiliki requirement :
 - Dokumentasi API dibuat menggunakan swagger
 - Autorisasi digunakan pada Photo,Comment, dan Social Media untuk menjamin hanya user yang berkaitan saja yang bisa merubah/hapus data photo, comment, dan social medianya.
 - Deployment dilakukan di Railway (
-  [Buka deployment](https://mygramgolang-production.up.railway.app/swagger/index.html) )
+  [Buka deployment](https://mygramgolang-production.up.railway.app/swagger/index.html ))
+  ![alt text](image.png)
+
 
 
 
