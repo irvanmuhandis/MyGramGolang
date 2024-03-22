@@ -11,7 +11,7 @@ import (
 	"github.com/asaskevich/govalidator"
 )
 
-var PORT = os.Getenv("PGPORT")
+var PORT = os.Getenv("PORT")
 
 // @title Final Assignment - M.Irvan Muhandis
 // @version 1.0
