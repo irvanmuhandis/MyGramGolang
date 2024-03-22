@@ -1,0 +1,877 @@
+basePath: /
+definitions:
+  request.LoginReq:
+    properties:
+      email:
+        example: admin@admin.com
+        type: string
+      password:
+        example: admin1
+        type: string
+    type: object
+  request.PostCommentReq:
+    properties:
+      message:
+        type: string
+      photo_id:
+        type: integer
+    type: object
+  request.PostPhotoReq:
+    properties:
+      caption:
+        example: Estetik
+        type: string
+      photo_url:
+        example: https://image.gambarpng.id/pngs/gambar-transparent-cute-cup-doodle-line-art-black-white-vector_46835.png
+        type: string
+      title:
+        example: Foto Bagus
+        type: string
+    type: object
+  request.PostSocialReq:
+    properties:
+      name:
+        type: string
+      social_media_url:
+        type: string
+    type: object
+  request.RegisReq:
+    properties:
+      age:
+        example: 12
+        type: integer
+      email:
+        example: admin@admin.com
+        type: string
+      password:
+        example: admin1
+        type: string
+      username:
+        example: admin
+        type: string
+    type: object
+  request.UpdateCommentReq:
+    properties:
+      message:
+        type: string
+    type: object
+  request.UpdatePhotoReq:
+    properties:
+      caption:
+        type: string
+      photo_url:
+        type: string
+      title:
+        type: string
+    type: object
+  request.UpdateSocialReq:
+    properties:
+      name:
+        type: string
+      social_media_url:
+        type: string
+    type: object
+  request.UpdateUserReq:
+    properties:
+      email:
+        type: string
+      username:
+        type: string
+    type: object
+  response.DelCommentResp:
+    properties:
+      message:
+        type: string
+    type: object
+  response.DelPhotoResp:
+    properties:
+      message:
+        type: string
+    type: object
+  response.DelSocialResp:
+    properties:
+      message:
+        type: string
+    type: object
+  response.DelUserResp:
+    properties:
+      message:
+        type: string
+    type: object
+  response.ErrorMessage:
+    properties:
+      error:
+        type: string
+      message:
+        type: string
+    type: object
+  response.GetCommentResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo:
+        $ref: '#/definitions/response.GetPhotoItemComment'
+      photo_id:
+        type: integer
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/response.GetUserItemComment'
+      user_id:
+        type: integer
+    type: object
+  response.GetPhotoItemComment:
+    properties:
+      caption:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  response.GetPhotoResp:
+    properties:
+      User:
+        $ref: '#/definitions/response.GetUserItemPhoto'
+      caption:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  response.GetSocialResp:
+    properties:
+      social_medias:
+        items:
+          $ref: '#/definitions/response.SocialMediaItem'
+        type: array
+    type: object
+  response.GetUserItemComment:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      username:
+        type: string
+    type: object
+  response.GetUserItemPhoto:
+    properties:
+      email:
+        type: string
+      username:
+        type: string
+    type: object
+  response.GetUserSocial:
+    properties:
+      id:
+        type: integer
+      profile_image_url:
+        type: string
+      username:
+        type: string
+    type: object
+  response.LoginResp:
+    properties:
+      token:
+        type: string
+    type: object
+  response.PostCommentResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo_id:
+        type: integer
+      user_id:
+        type: integer
+    type: object
+  response.PostSocialResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      socail_media_url:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  response.RegisResp:
+    properties:
+      age:
+        type: integer
+      email:
+        type: string
+      id:
+        type: integer
+      username:
+        type: string
+    type: object
+  response.SocialMediaItem:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      socail_media_url:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/response.GetUserSocial'
+      user_id:
+        type: integer
+    type: object
+  response.UpdateCommentResp:
+    properties:
+      caption:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  response.UpdatePhotoResp:
+    properties:
+      caption:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  response.UpdateSocialResp:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      socail_media_url:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  response.UpdateUserResp:
+    properties:
+      age:
+        type: integer
+      email:
+        type: string
+      id:
+        type: integer
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Final Assignment Class 005
+  license:
+    name: Golang Hacktiv8
+  title: Final Assignment - M.Irvan Muhandis
+  version: "1.0"
+paths:
+  /comments:
+    get:
+      consumes:
+      - application/json
+      description: Show Comment
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.GetCommentResp'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Show Comment
+      tags:
+      - comments
+    post:
+      consumes:
+      - application/json
+      description: Create Comment
+      parameters:
+      - description: Create comment Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.PostCommentReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.PostCommentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Comment
+      tags:
+      - comments
+  /comments/{commentId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Comment data
+      parameters:
+      - description: commentId
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.DelCommentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Comment
+      tags:
+      - comments
+    put:
+      consumes:
+      - application/json
+      description: Update Comment data
+      parameters:
+      - description: commentId
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      - description: Update Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.UpdateCommentReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.UpdateCommentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Update Comment
+      tags:
+      - comments
+  /photos:
+    get:
+      consumes:
+      - application/json
+      description: Show Photo
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.GetPhotoResp'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Show Photo
+      tags:
+      - photos
+    post:
+      consumes:
+      - application/json
+      description: Create Photo
+      parameters:
+      - description: Create Photo Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.PostPhotoReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.PostCommentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Photo
+      tags:
+      - photos
+  /photos/{photoId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Photo data
+      parameters:
+      - description: photoId
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.DelPhotoResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Photo
+      tags:
+      - photos
+    put:
+      consumes:
+      - application/json
+      description: Update photo data
+      parameters:
+      - description: photoId
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: Update Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.UpdatePhotoReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.UpdatePhotoResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Update photo
+      tags:
+      - photos
+  /socialmedias:
+    get:
+      consumes:
+      - application/json
+      description: Show SocialMedia
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.GetSocialResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Show SocialMedia
+      tags:
+      - socialmedias
+    post:
+      consumes:
+      - application/json
+      description: Create SocialMedia
+      parameters:
+      - description: Create socialmedia Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.PostSocialReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.PostSocialResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Create SocialMedia
+      tags:
+      - socialmedias
+  /socialmedias/{socialMediaId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete SocialMedia data
+      parameters:
+      - description: socialMediaId
+        in: path
+        name: socialMediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.DelSocialResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete SocialMedia
+      tags:
+      - socialmedias
+    put:
+      consumes:
+      - application/json
+      description: Update SocialMedia data
+      parameters:
+      - description: socialMediaId
+        in: path
+        name: socialMediaId
+        required: true
+        type: integer
+      - description: Update Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.UpdateSocialReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.UpdateSocialResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Update SocialMedia
+      tags:
+      - socialmedias
+  /users/{userId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete User data
+      parameters:
+      - description: userId
+        in: path
+        name: userId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.DelUserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete User
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: Update User data
+      parameters:
+      - description: userId
+        in: path
+        name: userId
+        required: true
+        type: integer
+      - description: Update Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.UpdateUserReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.UpdateUserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      security:
+      - ApiKeyAuth: []
+      summary: Update User
+      tags:
+      - users
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: Login User to acces the app
+      parameters:
+      - description: Login Request
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/request.LoginReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.LoginResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      summary: Login User
+      tags:
+      - users
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      description: Register User to acces the app
+      parameters:
+      - description: Register Request
+        in: body
+        name: id
+        required: true
+        schema:
+          $ref: '#/definitions/request.RegisReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.RegisResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorMessage'
+      summary: Register User
+      tags:
+      - users
+securityDefinitions:
+  ApiKeyAuth:
+    description: To access the app
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
