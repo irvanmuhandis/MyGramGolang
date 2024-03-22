@@ -1368,7 +1368,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "mygramgolang-production.up.railway.app:8080",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Final Assignment - M.Irvan Muhandis",
