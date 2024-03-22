@@ -9,7 +9,7 @@
         },
         "version": "1.0"
     },
-    "host": "mygramgolang-production.up.railway.app:8080",
+    "host": "mygramgolang-production.up.railway.app",
     "basePath": "/",
     "paths": {
         "/comments": {

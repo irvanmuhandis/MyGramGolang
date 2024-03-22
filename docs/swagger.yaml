@@ -303,7 +303,7 @@ definitions:
       username:
         type: string
     type: object
-host: mygramgolang-production.up.railway.app:8080
+host: mygramgolang-production.up.railway.app
 info:
   contact: {}
   description: Final Assignment Class 005
