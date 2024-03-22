@@ -89,6 +89,7 @@ func UserLogin(ctx *gin.Context) {
 			Error:   "Bad Request",
 			Message: "Invalid email/password",
 		})
+		return
 	}
 	//Dibandingkan password yang dari inputan dan dari database
 	comparePass := helpers.ComparePass([]byte(user.Password), []byte(pass))
