@@ -9,10 +9,10 @@ Tugas ini mengenai pembuatan REST API MyGram dengan menggunakan bahasa golang. M
 - Satu Photo Dapat Memiliki banyak comment
 - Satu User bisa memiliki banyak comment
 
-Adapun API ini memiliki requirement :
+Adapun API ini memiliki keterangan :
 - Autentikasi menggunakan JWT dalam keamanannya
+- JWT terenkripsi berisi id USer
 - Dokumentasi API dibuat menggunakan swagger
-- Autorisasi digunakan pada Photo,Comment, dan Social Media untuk menjamin hanya user yang berkaitan saja yang bisa merubah/hapus data photo, comment, dan social medianya.
 - Deployment dilakukan di Railway (
   [Buka deployment](https://mygramgolang-production.up.railway.app/swagger/index.html ))
   ![alt text](image.png)
